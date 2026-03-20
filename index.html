@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Chmod</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass-card" id="main-card">
+            <h1>Calculadora Chmod</h1>
+            <p class="subtitle">Ingresa 3 dígitos (0-7) para ver los permisos.</p>
+
+            <form id="level-form">
+                <div class="form-group">
+                    <label for="octal-input">Código Octal (ej. 755)</label>
+                    <input type="text" id="octal-input" maxlength="3" placeholder="777" required autocomplete="off">
+                    <div class="error-text" id="input-error">Solo números del 0 al 7</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Propietario (Owner)</label>
+                    <select id="out-owner">
+                        <option value="0">--- (Sin permiso)</option>
+                        <option value="1">--x (Ejecución)</option>
+                        <option value="2">-w- (Escritura)</option>
+                        <option value="3">-wx (Escritura y Ejecución)</option>
+                        <option value="4">r-- (Lectura)</option>
+                        <option value="5">r-x (Lectura y Ejecución)</option>
+                        <option value="6">rw- (Lectura y Escritura)</option>
+                        <option value="7">rwx (Lectura, Escritura y Ejecución)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Grupo (Group)</label>
+                    <select id="out-group">
+                        <option value="0">--- (Sin permiso)</option>
+                        <option value="1">--x (Ejecución)</option>
+                        <option value="2">-w- (Escritura)</option>
+                        <option value="3">-wx (Escritura y Ejecución)</option>
+                        <option value="4">r-- (Lectura)</option>
+                        <option value="5">r-x (Lectura y Ejecución)</option>
+                        <option value="6">rw- (Lectura y Escritura)</option>
+                        <option value="7">rwx (Lectura, Escritura y Ejecución)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Otros / Red (Public)</label>
+                    <select id="out-other">
+                        <option value="0">--- (Sin permiso)</option>
+                        <option value="1">--x (Ejecución)</option>
+                        <option value="2">-w- (Escritura)</option>
+                        <option value="3">-wx (Escritura y Ejecución)</option>
+                        <option value="4">r-- (Lectura)</option>
+                        <option value="5">r-x (Lectura y Ejecución)</option>
+                        <option value="6">rw- (Lectura y Escritura)</option>
+                        <option value="7">rwx (Lectura, Escritura y Ejecución)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomenclatura Simbólica (ej. rwxr-xr-x)</label>
+                    <input type="text" id="out-symbolic" maxlength="9" placeholder="rwxrwxrwx" autocomplete="off">
+                </div>
+
+                <div class="level-container">
+                    <div class="level-info">
+                        <div class="level-label">Transparencia de Acceso</div>
+                        <div class="level-value" id="level-text">Sin Datos</div>
+                    </div>
+                    <div class="progress-ring-container">
+                        <svg class="progress-ring" width="60" height="60">
+                            <circle class="progress-ring__background" stroke-width="4" fill="transparent" r="26" cx="30"
+                                cy="30" />
+                            <circle class="progress-ring__circle" stroke-width="4" fill="transparent" r="26" cx="30"
+                                cy="30" id="progress-circle" />
+                        </svg>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer-branding">
+        practica yakumoclass
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
