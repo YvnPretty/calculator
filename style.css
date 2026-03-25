@@ -46,6 +46,7 @@ h1 {
     margin-bottom: 0.5rem;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
@@ -83,6 +84,29 @@ select {
 input:focus,
 select:focus {
     border-color: var(--level-color);
+}
+
+.btn-clear {
+    margin-top: 0.5rem;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.btn-clear:hover {
+    background: rgba(244, 63, 94, 0.1);
+    border-color: #f43f5e;
+    color: #f43f5e;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.2);
 }
 
 .level-container {

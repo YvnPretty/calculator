@@ -19,7 +19,8 @@ const dom = {
     sym: document.getElementById('out-symbolic'),
     selects: ['out-owner', 'out-group', 'out-other'].map(id => document.getElementById(id)),
     circle: document.getElementById('progress-circle'),
-    label: document.getElementById('level-text')
+    label: document.getElementById('level-text'),
+    btnClear: document.getElementById('btn-clear')
 };
 
 const circumference = dom.circle.r.baseVal.value * 2 * Math.PI;
@@ -62,7 +63,13 @@ const syncFromSymbolic = () => {
     updateProgress(parts.reduce((a, b) => a + (CONFIG.revMap[b] ?? 0), 0));
 };
 
+const clearAll = () => {
+    dom.octal.value = '';
+    syncFromOctal();
+};
+
 dom.octal.addEventListener('input', syncFromOctal);
 dom.sym.addEventListener('input', syncFromSymbolic);
 dom.selects.forEach(s => s.addEventListener('change', syncFromSelects));
+dom.btnClear.addEventListener('click', clearAll);
 document.addEventListener('DOMContentLoaded', syncFromOctal);
